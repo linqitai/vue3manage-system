@@ -14,6 +14,91 @@ export default new Router({
             component: resolve => require(['../components/common/Home.vue'], resolve),
             meta: { title: '自述文件' },
             children:[
+				{
+				    path: '/home',
+				    component: resolve => require(['../components/page/home/home.vue'], resolve),
+				    meta: { title: '首页' }
+				},
+				{
+				    path: '/ranking',
+				    component: resolve => require(['../components/page/ranking/ranking.vue'], resolve),
+				    meta: { title: '排行榜' }
+				},
+				{
+				    path: '/userManage',
+				    component: resolve => require(['../components/page/user/userManage.vue'], resolve),
+				    meta: { title: '用户管理' }
+				},
+				{
+				    path: '/dealOrderManage',
+				    component: resolve => require(['../components/page/deal/dealOrderManage.vue'], resolve),
+				    meta: { title: '交易订单管理' }
+				},
+				{
+				    path: '/merchantManage',
+				    component: resolve => require(['../components/page/merchant/merchantManage.vue'], resolve),
+				    meta: { title: '商家管理' }
+				},
+				{
+				    path: '/contributionManage',
+				    component: resolve => require(['../components/page/contribution/contributionManage.vue'], resolve),
+				    meta: { title: '贡献值总账本' }
+				},
+				{
+				    path: '/mineralManage',
+				    component: resolve => require(['../components/page/mineral/mineralManage.vue'], resolve),
+				    meta: { title: '矿石总账本' }
+				},
+				{
+				    path: '/circulationRecords',
+				    component: resolve => require(['../components/page/mineral/circulationRecords.vue'], resolve),
+				    meta: { title: '矿石流通记录' }
+				},
+				{
+				    path: '/shopOrderManage',
+				    component: resolve => require(['../components/page/shop/shopOrderManage.vue'], resolve),
+				    meta: { title: '商品订单管理' }
+				},
+				{
+				    path: '/messageBoard',
+				    component: resolve => require(['../components/page/message/messageBoard.vue'], resolve),
+				    meta: { title: '留言板管理' }
+				},
+				{
+				    path: '/noticeManage',
+				    component: resolve => require(['../components/page/notice/noticeManage.vue'], resolve),
+				    meta: { title: '公告管理' }
+				},
+				{
+				    path: '/voteManage',
+				    component: resolve => require(['../components/page/vote/voteManage.vue'], resolve),
+				    meta: { title: '投票管理' }
+				},
+				{
+				    path: '/noobGuide',
+				    component: resolve => require(['../components/page/noob/noobGuide.vue'], resolve),
+				    meta: { title: '新手指南' }
+				},
+				{
+				    path: '/agencyManage',
+				    component: resolve => require(['../components/page/agency/agencyManage.vue'], resolve),
+				    meta: { title: '省市代理' }
+				},
+				{
+				    path: '/serviceManage',
+				    component: resolve => require(['../components/page/service/serviceManage.vue'], resolve),
+				    meta: { title: '客服管理' }
+				},
+				{
+				    path: '/roleManage',
+				    component: resolve => require(['../components/page/role/roleManage.vue'], resolve),
+				    meta: { title: '角色管理' }
+				},
+				{
+				    path: '/menuManage',
+				    component: resolve => require(['../components/page/menu/menuManage.vue'], resolve),
+				    meta: { title: '菜单管理' }
+				},
                 {
                     path: '/dashboard',
                     component: resolve => require(['../components/page/Dashboard.vue'], resolve),
@@ -97,6 +182,18 @@ export default new Router({
             path: '/login',
             component: resolve => require(['../components/page/Login.vue'], resolve)
         },
+		{
+		    path: '/operateNotice',
+		    component: resolve => require(['../components/page/notice/vueEditor.vue'], resolve)
+		},
+		{
+		    path: '/operateGuide',
+		    component: resolve => require(['../components/page/noob/vueEditor.vue'], resolve)
+		},
+		{
+		    path: '/operateVote',
+		    component: resolve => require(['../components/page/vote/vueEditor.vue'], resolve)
+		},
         {
             path: '*',
             redirect: '/404'

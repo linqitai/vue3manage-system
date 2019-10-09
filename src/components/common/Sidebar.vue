@@ -38,8 +38,117 @@
             return {
                 collapse: false,
                 items: [
+					{
+					    icon: 'el-icon-pie-chart',
+						// icon:'iconfont iconfont-question',
+					    index: 'home',
+					    title: '首页'
+					},
+					{
+					    icon: 'el-icon-data-analysis',
+						// icon:'iconfont iconfont-question',
+					    index: 'ranking',
+					    title: '查看排名'
+					},
+					{
+					    icon: 'el-icon-user',
+						// icon:'iconfont iconfont-question',
+					    index: 'userManage',
+					    title: '用户管理'
+					},
+					{
+					    icon: 'el-icon-coin',
+						// icon:'iconfont iconfont-question',
+					    index: 'dealOrderManage',
+					    title: '交易订单管理'
+					},
+					{
+					    icon: 'el-icon-s-custom',
+						// icon:'iconfont iconfont-question',
+					    index: 'merchantManage',
+					    title: '商家管理'
+					},
+					{
+					    icon: 'el-icon-shopping-cart-full',
+						// icon:'iconfont iconfont-question',
+					    index: 'shopOrderManage',
+					    title: '商品订单管理'
+					},
+					{
+					    icon: 'el-icon-s-flag',
+						// icon:'iconfont iconfont-question',
+					    index: 'contributionManage',
+					    title: '贡献值总账本'
+					},
+					{
+					    icon: 'el-icon-medal',
+						// icon:'iconfont iconfont-question',
+					    index: 'mineralManage',
+					    title: '矿石总账本'
+					},
+					{
+					    icon: 'el-icon-truck',
+						// icon:'iconfont iconfont-question',
+					    index: 'circulationRecords',
+					    title: '矿石流通记录'
+					},
+					{
+					    icon: 'el-icon-document',
+						// icon:'iconfont iconfont-question',
+					    index: 'messageBoard',
+					    title: '留言板管理'
+					},
+					{
+					    icon: 'el-icon-money',
+						// icon:'iconfont iconfont-question',
+					    index: 'voteManage',
+					    title: '投票管理'
+					},
+					{
+					    icon: 'el-icon-bell',
+						// icon:'iconfont iconfont-question',
+					    index: 'noticeManage',
+					    title: '公告管理'
+					},
+					{
+					    icon: 'el-icon-reading',
+						// icon:'iconfont iconfont-question',
+					    index: 'noobGuide',
+					    title: '新手指南'
+					},
+					{
+					    icon: 'el-icon-guide',
+						// icon:'iconfont iconfont-question',
+					    index: 'agencyManage',
+					    title: '省市代理'
+					},
+					{
+					    icon: 'el-icon-headset',
+						// icon:'iconfont iconfont-question',
+					    index: 'serviceManage',
+					    title: '客服管理'
+					},
+					{
+					    icon: 'iconfont iconfont-role',
+						// icon:'iconfont iconfont-question',
+					    index: 'roleManage',
+					    title: '角色管理'
+					},
+					{
+					    icon: 'el-icon-menu',
+						// icon:'iconfont iconfont-question',
+					    index: 'menuManage',
+					    title: '菜单管理'
+					},
+					{
+					    icon: 'el-icon-s-grid',
+						// icon:'iconfont iconfont-question',
+					    index: 'crowdManage',
+					    title: '众筹管理'
+					},
                     {
                         icon: 'el-icon-lx-home',
+						// icon:'iconfont iconfont-question',
                         index: 'dashboard',
                         title: '系统首页'
                     },

@@ -2,21 +2,21 @@
     <div class="login-wrap">
         <div class="ms-login">
             <div class="ms-title">后台管理系统</div>
-            <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="0px" class="ms-content">
+            <el-form :model="form" :rules="rules" ref="form" label-width="0px" class="ms-content">
                 <el-form-item prop="username">
-                    <el-input v-model="ruleForm.username" placeholder="username">
+                    <el-input v-model="form.username" placeholder="username">
                         <el-button slot="prepend" icon="el-icon-lx-people"></el-button>
                     </el-input>
                 </el-form-item>
                 <el-form-item prop="password">
-                    <el-input type="password" placeholder="password" v-model="ruleForm.password" @keyup.enter.native="submitForm('ruleForm')">
+                    <el-input type="password" placeholder="password" v-model="form.password" @keyup.enter.native="submitForm('form')">
                         <el-button slot="prepend" icon="el-icon-lx-lock"></el-button>
                     </el-input>
                 </el-form-item>
                 <div class="login-btn">
-                    <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
+                    <el-button type="primary" @click="submitForm('form')">登录</el-button>
                 </div>
-                <p class="login-tips">Tips : 用户名和密码随便填。</p>
+                <!-- <p class="login-tips">Tips : 用户名和密码随便填。</p> -->
             </el-form>
         </div>
     </div>
@@ -27,9 +27,9 @@
     export default {
         data: function(){
             return {
-                ruleForm: {
-                    username: 'admin',
-                    password: '123123'
+                form: {
+                    username: '',
+                    password: ''
                 },
                 rules: {
                     username: [
@@ -44,27 +44,43 @@
         methods: {
             submitForm(formName) {
                 var that = this;
+				let _this = this;
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
-                        localStorage.setItem('ms_username',this.ruleForm.username);
-                        var url = 'api/admin/admin/login'
-                        var params = {
-                          account: this.ruleForm.username,
-                          password: this.ruleForm.password,
-                          // remember: this.statusChecked?'1':'0'
-                        }
-                        var url = this.$api.getLoginUrl;
-                        console.log(params,"params")
-                        var method = 'POST'
-                        that.$ajax(url,method,params,function(res){
-                          var result = res;
-                          if (result.code == that.$api.ERR_OK) {
-                            console.log("成功");
+						var params = {
+							userName:_this.form.username,
+							password:_this.form.password,
+						}
+						_this.$ajax.ajax(_this.$api.login, 'GET', params, function(res){
+							console.log('res',res);
+							// this.addlOrEditVisible = false;
+							// _this.$message.success(`${_this.visibleType=='add'?'添加':'修改'} ${_this.form.name} 信息成功`);
+							//==============
+							if(res.code == _this.$api.ERR_OK){
+								_this.$router.push({path:'home'});
+								console.log('token',res.data.token);
+								localStorage.setItem('token',res.data.token);
+							}
+						})
+                        // localStorage.setItem('ms_username',this.form.username);
+						// that.$router.push('/');
+                        // var params = {
+                        //   account: this.form.username,
+                        //   password: this.form.password,
+                        //   // remember: this.statusChecked?'1':'0'
+                        // }
+                        // var url = this.$api.getLoginUrl;
+                        // console.log(params,"params")
+                        // var method = 'POST'
+                        // that.$ajax(url,method,params,function(res){
+                        //   var result = res;
+                        //   if (result.code == that.$api.ERR_OK) {
+                        //     console.log("成功");
 
-                          }else{
-                            that.$message(result.message)
-                          }
-                        })
+                        //   }else{
+                        //     that.$message(result.message)
+                        //   }
+                        // })
                         // this.$axios.post(url, {
                         //     account: 'admin',
                         //     password: '123456'
